@@ -2,9 +2,9 @@ from twilio.rest import Client
 import pandas as pd
 
 # Your Account SID from twilio.com/console
-account_sid = "ACfa8fac753dd24daef7a5675e6aa2ad20"
+account_sid = "ACfa8fafhsgklffbjrkkf7a5675e6aa2ad20"
 # Your Auth Token from twilio.com/console
-auth_token = "6bd629a66d2b1b6273d4b26b2e6b0cbe"
+auth_token = "6bd629axhhsjjd573d4b26b2e6b0cbe"
 
 client = Client(account_sid, auth_token)
 # iremos instalar as biblicotecas Pandas, openpyxl e twilio
@@ -21,15 +21,15 @@ for tabela in lista_vendas:
         vendas = tabela_vendas.loc[tabela_vendas['Valor Final'] > 4000, 'Valor Final'].values[0]
         mensagem = f'Foi encontrado em {tabela} alguém que bateu a meta. Estabelecimento: {estabelecimento}, Vendas: {vendas}'
         message = client.messages.create(
-            to="+5571999554284",
-            from_="+14156494428",
+            to="+5571996666666",
+            from_="+141565555555",
             body=mensagem)
 
         print(message.sid)
     else:
         message = client.messages.create(
-            to="+5571999554284",
-            from_="+14156494428",
+            to="+55719966666666",
+            from_="+141565555555",
             body="Ninguém bateu a meta de 3000 mil reais.")
 
         print(message.sid)
